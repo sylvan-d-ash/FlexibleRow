@@ -6,6 +6,20 @@ A lightweight, flexible SwiftUI component system that demonstrates how to build 
 
 `FlexibleRow` is a composable row component with three slots (leading, center, trailing) that can accommodate any SwiftUI view. It follows the principle of **"start simple, evolve as needed"** rather than over-engineering upfront.
 
+## Screenshots
+
+**ScrollView**
+
+|  |  |
+|--|--|
+| <img width="250" alt="Simulator Screenshot - iPhone 16 Pro - 2025-10-29 at 13 50 38" src="https://github.com/user-attachments/assets/b6e97c4b-d925-439b-9a15-a163c76e31c0" /> | <img width="250" alt="Simulator Screenshot - iPhone 16 Pro - 2025-10-29 at 13 50 44" src="https://github.com/user-attachments/assets/5624ba91-04da-4484-8df1-0e519775816e" /> |
+
+**List**
+
+|  |  |  |
+|--|--|--|
+| <img width="250" alt="Simulator Screenshot - iPhone 16 Pro - 2025-10-29 at 13 58 26" src="https://github.com/user-attachments/assets/b37f86c9-9bc6-40e0-a8d0-532fb3e6f723" /> | <img width="250" alt="Simulator Screenshot - iPhone 16 Pro - 2025-10-29 at 13 58 49" src="https://github.com/user-attachments/assets/4662c170-9549-4a76-9f21-2ba9d2ca850b" /> | <img width="250" alt="Simulator Screenshot - iPhone 16 Pro - 2025-10-29 at 14 14 47" src="https://github.com/user-attachments/assets/348d5419-d8f5-4a5c-afc5-9e1fda54ce7b" /> |
+
 ## Design Philosophy
 
 This project demonstrates:
