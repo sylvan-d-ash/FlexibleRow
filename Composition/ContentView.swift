@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var hasNotifications = true
     @State private var isDarkMode = true
     @State private var sortOrder = 0
+    @State private var isFavourite = false
 
     var body: some View {
         ScrollView {
@@ -84,6 +85,44 @@ struct ContentView: View {
                     }
                 }
                 .background(Color(.systemBackground))
+
+                sectionHeader("Navigation Patterns")
+
+                FlexibleRow {
+                    ControlButton(image: "chevron.left") {
+                        print("back")
+                    }
+                } center: {
+                    Text("Chapter 5")
+                        .font(.headline)
+                } trailing: {
+                    ControlButton(image: "chevron.right") {
+                        print("forward")
+                    }
+                }
+                .background(Color(.systemBackground))
+
+                Divider().padding(.leading)
+
+                FlexibleRow {
+                    ControlRadio(
+                        selectedImage: "heart.fill",
+                        unselectedImage: "heart",
+                        selectedColor: .red,
+                        unselectedColor: .red,
+                        isSelected: isFavourite
+                    ) {
+                        isFavourite.toggle()
+                    }
+                } center: {
+                    Text("Favourite Item")
+                } trailing: {
+                    ControlButton(image: "square.and.arrow.up") {
+                        print("share")
+                    }
+                }
+                .background(Color(.systemBackground))
+
             }
         }
         .background(Color(.systemGroupedBackground))
