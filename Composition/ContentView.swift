@@ -123,6 +123,39 @@ struct ContentView: View {
                 }
                 .background(Color(.systemBackground))
 
+                sectionHeader("Mixed Controls")
+
+                FlexibleRow {
+                    ControlRadio(isSelected: true) {
+                        print("theme selected")
+                    }
+                } center: {
+                    Text("Light Theme")
+                } trailing: {
+                    ControlToggle(isOn: .constant(true))
+                }
+                .background(Color(.systemBackground))
+
+                Divider().padding(.leading)
+
+                FlexibleRow {
+                    Image(systemName: "star.fill")
+                        .foregroundStyle(.yellow)
+                } center: {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Premium Feature")
+                            .font(.system(size: 16, weight: .semibold))
+                        Text("Unlock all features")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                } trailing: {
+                    ControlButton(title: "Upgrade") {
+                        print("upgrade tapped")
+                    }
+                }
+                .background(Color(.systemBackground))
+
             }
         }
         .background(Color(.systemGroupedBackground))
