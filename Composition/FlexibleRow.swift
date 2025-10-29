@@ -38,3 +38,11 @@ extension FlexibleRow where Leading == EmptyView, Center == Text {
         self.trailing = trailing
     }
 }
+
+extension FlexibleRow where Leading == EmptyView, Trailing == EmptyView {
+    init(center: @escaping () -> Center) {
+        self.leading = { EmptyView() }
+        self.center = center
+        self.trailing = { EmptyView() }
+    }
+}

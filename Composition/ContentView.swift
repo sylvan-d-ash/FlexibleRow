@@ -202,6 +202,14 @@ struct ContentView: View {
                 }
                 .background(Color(.systemBackground))
 
+                sectionHeader("Center Only")
+
+                FlexibleRow {
+                    Text("No controls, Just Content")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                .background(Color(.systemBackground))
             }
         }
         .background(Color(.systemGroupedBackground))
