@@ -156,6 +156,52 @@ struct ContentView: View {
                 }
                 .background(Color(.systemBackground))
 
+                sectionHeader("Complex Layouts")
+
+                FlexibleRow {
+                    Image(systemName: "person.circle.fill")
+                        .font(.system(size: 40))
+                        .foregroundStyle(.blue)
+                } center: {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("John Doe")
+                            .font(.headline)
+                        Text("john.doe@example.com")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Text("Premium Member")
+                            .font(.caption)
+                            .foregroundStyle(.blue)
+                    }
+                } trailing: {
+                    VStack(spacing: 8) {
+                        ControlButton(image: "pencil") {
+                            print("edit profile")
+                        }
+                        ControlButton(image: "gearshape") {
+                            print("settings")
+                        }
+                    }
+                }
+                .background(Color(.systemBackground))
+
+                Divider().padding(.leading)
+
+                FlexibleRow(title: "Manage Item") {
+                    HStack(spacing: 12) {
+                        ControlButton(image: "pencil") {
+                            print("edit")
+                        }
+                        ControlButton(image: "doc.on.doc") {
+                            print("duplicate")
+                        }
+                        ControlButton(image: "trash") {
+                            print("delete")
+                        }
+                    }
+                }
+                .background(Color(.systemBackground))
+
             }
         }
         .background(Color(.systemGroupedBackground))
