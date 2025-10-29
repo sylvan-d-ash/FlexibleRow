@@ -11,7 +11,7 @@ struct ControlToggle: View {
     let label: String?
     @Binding var isOn: Bool
 
-    init(label: String?, isOn: Binding<Bool>) {
+    init(label: String? = nil, isOn: Binding<Bool>) {
         self.label = label
         self._isOn = isOn
     }

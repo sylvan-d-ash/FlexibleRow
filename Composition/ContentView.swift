@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var hasNotifications = true
+    @State private var isDarkMode = true
+    @State private var sortOrder = 0
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -36,6 +40,47 @@ struct ContentView: View {
                 FlexibleRow(title: "Save Changes") {
                     ControlButton(title: "Save", image: "checkmark") {
                         print("save tapped)")
+                    }
+                }
+                .background(Color(.systemBackground))
+
+                sectionHeader("Toggle Controls")
+
+                FlexibleRow(title: "Notifications") {
+                    ControlToggle(isOn: $hasNotifications)
+                }
+                .background(Color(.systemBackground))
+
+                Divider().padding(.leading)
+
+                FlexibleRow(title: "Dark Mode") {
+                    ControlToggle(label: "Dark Mode", isOn: $isDarkMode)
+                }
+                .background(Color(.systemBackground))
+
+                sectionHeader("Sort Options")
+
+                FlexibleRow(title: "Name") {
+                    ControlRadio(isSelected: sortOrder == 0) {
+                        sortOrder = 0
+                    }
+                }
+                .background(Color(.systemBackground))
+
+                Divider().padding(.leading)
+
+                FlexibleRow(title: "Date") {
+                    ControlRadio(isSelected: sortOrder == 1) {
+                        sortOrder = 1
+                    }
+                }
+                .background(Color(.systemBackground))
+
+                Divider().padding(.leading)
+
+                FlexibleRow(title: "Size") {
+                    ControlRadio(isSelected: sortOrder == 2) {
+                        sortOrder = 2
                     }
                 }
                 .background(Color(.systemBackground))
